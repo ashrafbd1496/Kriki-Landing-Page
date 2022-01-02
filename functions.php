@@ -128,7 +128,7 @@ function ashraf_kriki_assets()
 add_action('wp_enqueue_scripts', 'ashraf_kriki_assets');
 
 
-
+//function to stop wp autosave
 add_action( 'admin_init', 'disable_autosave' );
 function disable_autosave() {
     wp_deregister_script( 'autosave' );

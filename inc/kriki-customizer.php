@@ -37,7 +37,7 @@ Presence of Businesses', 'ashraf_kirki' ),
 	),
 ] );
 
-//Banner Title Color
+//Banner Title Typography and color
 Kirki::add_field( 'ashraf_kriki_config', [
 	'type'        => 'typography',
 	'settings'    => 'banner_title_typography_setting',
@@ -52,7 +52,7 @@ Kirki::add_field( 'ashraf_kriki_config', [
 		'letter-spacing' => '0',
 		'color'          => '#585b60',
 		'text-transform' => 'uppercase',
-		'text-align'     => 'left',
+		'text-align'     => 'center',
 	],
 	'priority'    => 10,
 	'transport'   => 'auto',
@@ -64,7 +64,7 @@ Kirki::add_field( 'ashraf_kriki_config', [
 ] );
 
 
-
+//Banner Button Text
 Kirki::add_field( 'ashraf_kriki_config', [
 	'type'     => 'text',
 	'settings' => 'banner_button_text',
@@ -82,6 +82,7 @@ Kirki::add_field( 'ashraf_kriki_config', [
 	),
 ] );
 
+//Banner Button URL
 Kirki::add_field( 'ashraf_kriki_config', [
 	'type'     => 'link',
 	'settings' => 'banner_button_link',
@@ -91,6 +92,7 @@ Kirki::add_field( 'ashraf_kriki_config', [
 	'priority' => 10,
 ] );
 
+//Banner Image
 Kirki::add_field( 'ashraf_kriki_config', [
 	'type'     => 'image',
 	'settings' => 'banner_image',
@@ -100,3 +102,25 @@ Kirki::add_field( 'ashraf_kriki_config', [
 	
 ] );
 
+//Banner secton Background Image
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'background',
+	'settings'    => 'banner_background_image',
+	'label'       => esc_html__( 'Banner Background Image', 'ashraf_kirki' ),
+	'section'     => 'banner_section',
+	'default'     => [
+		'background-color'      => 'rgba(20,20,20,.8)',
+		'background-image'      => '',
+		'background-repeat'     => 'no-repeat',
+		'background-position'   => 'center center',
+		'background-size'       => 'cover',
+		'background-attachment' => 'scroll',
+	],
+	'transport'   => 'auto',
+	'output'      => [
+		[
+			'element' => '#hero-area',
+		],
+	],
+] );
