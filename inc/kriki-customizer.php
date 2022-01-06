@@ -1,7 +1,7 @@
 <?php 
 
 if ( class_exists( 'Kirki' ) ) {
-	
+
 Kirki::add_config( 'ashraf_kriki_config', array(
 	'capability'    => 'edit_theme_options',
 	'option_type'   => 'theme_mod',
@@ -363,3 +363,42 @@ Kirki::add_field( 'ashraf_kriki_config', [
 ] );
 
 }
+
+
+// service item align
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'radio-buttonset',
+	'settings'    => 'service_item_align',
+	'label'       => esc_html__( 'Service Item Align', 'ashraf_kirki' ),
+	'section'     => 'service_section',
+	'default'     => 'left',
+	'priority'    => 10,
+	'choices'     => [
+		'left'   => esc_html__( 'Left', 'ashraf_kirki' ),
+		'center' => esc_html__( 'Center', 'ashraf_kirki' ),
+		'right'  => esc_html__( 'Right', 'ashraf_kirki' ),
+	],
+	'output'=>array(
+
+		array(
+			'element'=>'.services-item',
+			'property'=>'text-align',
+
+		)
+	),
+] );
+
+//service item column 
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'radio-buttonset',
+	'settings'    => 'service_item_column',
+	'label'       => esc_html__( 'Service Item column', 'ashraf_kirki' ),
+	'section'     => 'service_section',
+	'default'     => 'col-lg-4',
+	'priority'    => 10,
+	'choices'     => [
+		'col-lg-4'   => esc_html__( '03 columns', 'ashraf_kirki' ),
+		'col-lg-6' => esc_html__( '02 columns', 'ashraf_kirki' ),
+		'col-lg-3'  => esc_html__( '04 columns', 'ashraf_kirki' ),
+	],
+] );

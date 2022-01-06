@@ -17,7 +17,7 @@
             $services = get_theme_mod('service_repeater');
             foreach($services as $service){
               ?>
-                <div class="col-md-6 col-lg-4 col-xs-12">
+                <div class="col-md-6 <?php echo get_theme_mod('service_item_column') ;?> col-xs-12">
                   <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
                     <div class="icon">
                       <i class="<?php echo $service['service_item_icon']; ?>"></i>
