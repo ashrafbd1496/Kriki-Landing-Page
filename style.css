@@ -14,3 +14,8 @@ Text Domain: ashraf_kriki
 Tags: landing-page,stack-template, one-page website, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 */
+
+
+.team-item .team-img img{
+	width: 100%;
+}

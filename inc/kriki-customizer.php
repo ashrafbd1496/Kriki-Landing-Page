@@ -542,3 +542,126 @@ began to grow in 2020.', 'ashraf_kirki' ),
 		)
 	),
 ] );
+
+//Team section Repeater Items
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Team Items', 'ashraf_kirki' ),
+	'section'     => 'team_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'team_item_title',
+	],
+	'button_label' => esc_html__('Add New Team Item', 'ashraf_kirki' ),
+	'settings'     => 'team_repeater',
+	'default'      =>'',
+	'fields' => [
+        'team_member_facebook' => [
+			'type'        => 'link',
+			'label'       => esc_html__( 'Facebook', 'ashraf_kirki' ),
+			'default'     => 'https://facebook.com',
+           
+		],
+		'team_member_twitter' => [
+			'type'        => 'link',
+			'label'       => esc_html__( 'Twitter', 'ashraf_kirki' ),
+			'default'     => 'https://twitter.com',
+           
+		],
+		'team_member_instagram' => [
+			'type'        => 'link',
+			'label'       => esc_html__( 'Instagram', 'ashraf_kirki' ),
+			'default'     => 'https://instagram.com',
+           
+		],
+		'team_people_name' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Teams People Name', 'ashraf_kirki' ),
+			'default'     => 'Jon Doe',
+		],
+		'teams_people_desg' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Teams Peolple Designation', 'ashraf_kirki' ),
+			'default'     => 'Web developer',
+		],
+		'teams_people_image' => [
+			'type'        => 'image',
+			'label'       => esc_html__( 'Teams Peolple image', 'ashraf_kirki' ),
+			'default'     => 'https://via.placeholder.com/480',
+		],
+	],
+    'choices' => [
+		'limit' => 4
+	],
+] );
+
+
+//Counter Section
+
+Kirki::add_section( 'counter_section', array(
+    'title'          => esc_html__( 'Counter Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Counter Section Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'counter_section_show',
+	'label'       => esc_html__( 'Show Counter Section', 'kirki' ),
+	'section'     => 'counter_section',
+	'default'     => true,
+] );
+
+
+
+//Counter section Repeater Items
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Counter Items', 'ashraf_kirki' ),
+	'section'     => 'counter_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'counter_item_title',
+	],
+	'button_label' => esc_html__('Add New Counter Item', 'ashraf_kirki' ),
+	'settings'     => 'counter_repeater',
+	'default'      =>'',
+	'fields' => [
+        'counter_icon' => [
+			'type'        => 'select',
+			'label'       => esc_html__( 'User', 'ashraf_kirki' ),
+			'default'     => 'lni-users',
+			'choices'	=>array(
+				 'lni-users' => __('Users', 'ashraf_kirki'),
+				 'lni-emoji-smile' => __('Smile', 'ashraf_kirki'),
+				 'lni-download' => __('Download', 'ashraf_kirki'),
+				 'lni-thumbs-up' => __('Thumps Up', 'ashraf_kirki'),
+			)
+           
+		],
+		'counter_numbers' => [
+			'type'        => 'number',
+			'label'       => esc_html__( 'Conter Number', 'ashraf_kirki' ),
+			'default'     => '100',
+           
+		],
+		'counter_item_title' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Counter Item Title', 'ashraf_kirki' ),
+			'default'     => 'Users',
+           
+		],
+		
+	],
+    'choices' => [
+		'limit' => 4
+	],
+] );
+
