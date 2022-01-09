@@ -9,8 +9,8 @@ Kirki::add_config( 'ashraf_kriki_config', array(
 
 Kirki::add_panel( 'ashraf_kriki_panel', array(
     'priority'    => 10,
-    'title'       => esc_html__( 'Header Options', 'ashraf_kirki' ),
-    'description' => esc_html__( 'Header Options description', 'ashraf_kirki' ),
+    'title'       => esc_html__( 'Theme  Options', 'ashraf_kirki' ),
+    'description' => esc_html__( 'Theme Options description', 'ashraf_kirki' ),
 ) );
 
 Kirki::add_section( 'banner_section', array(
@@ -401,4 +401,144 @@ Kirki::add_field( 'ashraf_kriki_config', [
 		'col-lg-6' => esc_html__( '02 columns', 'ashraf_kirki' ),
 		'col-lg-3'  => esc_html__( '04 columns', 'ashraf_kirki' ),
 	],
+] );
+
+
+
+//Promo video section
+Kirki::add_section( 'video_section', array(
+    'title'          => esc_html__( 'Video Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Video Section Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'video_show',
+	'label'       => esc_html__( 'Show Video Section', 'kirki' ),
+	'section'     => 'video_section',
+	'default'     => true,
+] );
+
+//Video Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'video_title',
+	'label'    => esc_html__( 'Video Title', 'ashraf_kirki' ),
+	'section'  => 'video_section',
+	'default'  => esc_html__( 'Watch Video', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.video-promo .video-promo-content h2',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+
+//Video Link
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'link',
+	'settings' => 'video_link',
+	'label'    => esc_html__( 'Video Link', 'ashraf_kirki' ),
+	'section'  => 'video_section',
+	'default'  => 'https://www.youtube.com/watch?v=yP6kdOZHids'
+
+	
+] );
+
+//Video icon
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'select',
+	'settings' => 'video_icon',
+	'label'    => esc_html__( 'Video Icon', 'ashraf_kirki' ),
+	'section'  => 'video_section',
+	'default'  => esc_html__( 'lni-film-play', 'ashraf_kirki' ),
+	'choices'=>array(
+		'lni-film-play'=>__('Play','ashraf_kirki'),
+		'lni-video'=>__('Vieo','ashraf_kirki'),
+
+	),
+
+	
+] );
+
+
+//Video Background Image
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'background',
+	'settings' => 'video_bg_image',
+	'label'    => esc_html__( 'Video Background', 'ashraf_kirki' ),
+	'section'  => 'video_section',
+	'transport'=>'auto',
+	'output'=>array(
+		array(
+			
+			'element'=>'.video-promo',
+
+		)
+	),
+	
+	
+] );
+
+//Team Section
+
+Kirki::add_section( 'team_section', array(
+    'title'          => esc_html__( 'Team Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Team Section Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'team_section_show',
+	'label'       => esc_html__( 'Show Team Section', 'kirki' ),
+	'section'     => 'team_section',
+	'default'     => true,
+] );
+
+//Team Section Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'team_section_title',
+	'label'    => esc_html__( 'Team Section Title', 'ashraf_kirki' ),
+	'section'  => 'team_section',
+	'default'  => esc_html__( 'Meet our team', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#team .section-header h2',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+//Team Section Description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'team_section_desc',
+	'label'    => esc_html__( 'Team Section Description', 'ashraf_kirki' ),
+	'section'  => 'team_section',
+	'default'  => esc_html__( 'A desire to help and empower others between community contributors in technology
+began to grow in 2020.', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#team .section-header p',
+			'function'=>'html',
+
+		)
+	),
 ] );
