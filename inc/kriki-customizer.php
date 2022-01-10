@@ -665,3 +665,126 @@ Kirki::add_field( 'ashraf_kriki_config', [
 	],
 ] );
 
+
+
+
+//Price section
+
+Kirki::add_section( 'price_section', array(
+    'title'          => esc_html__( 'Price Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Price Sedtion Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'price_section_show',
+	'label'       => esc_html__( 'Show Price Section', 'kirki' ),
+	'section'     => 'price_section',
+	'default'     => true,
+] );
+
+//Price Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'price_section_title',
+	'label'    => esc_html__( 'Price Section Title', 'ashraf_kirki' ),
+	'section'  => 'price_section',
+	'default'  => esc_html__( 'Best Pricing', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#pricing .section-header h2',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+//Price description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'price_section_description',
+	'label'    => esc_html__( 'Price Section Description', 'ashraf_kirki' ),
+	'section'  => 'price_section',
+	'default'  => esc_html__( 'A desire to help and empower others between community contributors in technology
+began to grow in 2020.', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#pricing .section-header p',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+
+//Price section Repeater Items
+
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Price Items', 'ashraf_kirki' ),
+	'section'     => 'price_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'price_item_title',
+	],
+	'button_label' => esc_html__('Add New Price Item', 'ashraf_kirki' ),
+	'settings'     => 'price_repeater',
+	'fields' => [
+			'pricing_item_options' => [
+			'type'        => 'select',
+			'label'       => esc_html__( 'Pricing Item options', 'ashraf_kirki' ),
+			'default'     => array('Business Analyzing', '24/7 Tech Suport', 'Operational Excellence'),
+			'multiple'	=>12,
+			'choices'     => [
+				'business-analyzing' => esc_html__( 'Business Analyzing', 'ashraf_kirki' ),
+				'tech-support' => esc_html__( '24/7 Tech Suport', 'ashraf_kirki' ),
+				'operational-excellence' => esc_html__( 'Operational Excellence', 'ashraf_kirki' ),
+				'business-idea' => esc_html__( 'Business Idea Ready', 'ashraf_kirki' ),
+				'database' => esc_html__( '2 Database', 'ashraf_kirki' ),
+				'customer-support' => esc_html__( 'Customer Support', 'ashraf_kirki' ),
+							],
+
+		],
+		
+        'pricing_item_title' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Pricing Item Title', 'ashraf_kirki' ),
+			'default'     => 'Basic',
+           
+		],
+		'pricing_item_value' => [
+			'type'        => 'number',
+			'label'       => esc_html__( 'Pricing Item Value', 'ashraf_kirki' ),
+			'default'     => '12.90',
+           
+		],
+		'pricing_item_button_url' => [
+			'type'        => 'link',
+			'label'       => esc_html__( 'Pricing  Item Button Link', 'ashraf_kirki' ),
+			'default'     => 'https//kirki.ashrafbd.com',
+		],
+		'pricing_item_button_text' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Pricing Item Button Text', 'ashraf_kirki' ),
+			'default'     => 'GET IT',
+		],
+	
+	],
+
+    'choices' => [
+		'limit' => 3
+	],
+] );
+
+
