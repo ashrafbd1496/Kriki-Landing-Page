@@ -25,7 +25,7 @@
                 <?php if ( ! empty( $price ) ) : ?>
                    <ul class="description">
                     <?php foreach ( $price as $selected_option ) : ?>
-                      <li><?php echo $selected_option['pricing_item_options']; ?></li>
+                      <li><?php echo $selected_option; ?></li>
                     <?php endforeach; ?>
                   </ul>
                 <?php endif; ?>

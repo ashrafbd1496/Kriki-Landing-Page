@@ -788,3 +788,102 @@ Kirki::add_field( 'ashraf_kriki_config', [
 ] );
 
 
+//Skill section
+
+Kirki::add_section( 'skill_section', array(
+    'title'          => esc_html__( 'Skill Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Skill Section Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'skill_section_show',
+	'label'       => esc_html__( 'Show Skill Section', 'kirki' ),
+	'section'     => 'skill_section',
+	'default'     => true,
+] );
+
+//Skill Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'skill_title_setting',
+	'label'    => esc_html__( 'Skill Title', 'ashraf_kirki' ),
+	'section'  => 'skill_section',
+	'default'  => esc_html__( 'Our Skill.', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.skill-area .site-heading h2',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+//Skill description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'skill_description_setting',
+	'label'    => esc_html__( 'Skill Description', 'ashraf_kirki' ),
+	'section'  => 'skill_section',
+	'default'  => esc_html__( ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus architecto .', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.skill-area .site-heading p',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+//Skill image
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'image',
+	'settings' => 'skill_image_setting',
+	'label'    => esc_html__( 'Skill Description', 'ashraf_kirki' ),
+	'section'  => 'skill_section',
+	
+] );
+
+//Skill  Repeater Items
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Skill Items', 'ashraf_kirki' ),
+	'section'     => 'skill_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'skill_item_title',
+	],
+	'button_label' => esc_html__('Add New Counter Item', 'ashraf_kirki' ),
+	'settings'     => 'skill_repeater',
+	'default'      =>'',
+	'fields' => [
+        'skill_item_title' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Skill Title', 'ashraf_kirki' ),
+			'default'     => '',
+           
+		],
+		'skill_numbers' => [
+			'type'        => 'number',
+			'label'       => esc_html__( 'Skill Number', 'ashraf_kirki' ),
+			'default'     => '98',
+           
+		],
+		
+	],
+    'choices' => [
+		'limit' => 3
+	],
+] );
