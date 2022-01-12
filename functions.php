@@ -55,6 +55,8 @@ function kriki_setup(){
         	'main-menu'=>esc_html__('Primary','ashraf_kiri'),
         ));
 
+        add_image_size( 'kirki', 600, 400, true );
+
 }
 
 add_action('after_setup_theme','kriki_setup');
@@ -129,10 +131,10 @@ add_action('wp_enqueue_scripts', 'ashraf_kriki_assets');
 
 
 //function to stop wp autosave
-add_action( 'admin_init', 'disable_autosave' );
-function disable_autosave() {
-    wp_deregister_script( 'autosave' );
-} 
+// add_action( 'admin_init', 'disable_autosave' );
+// function disable_autosave() {
+//     wp_deregister_script( 'autosave' );
+// } 
 
 
 

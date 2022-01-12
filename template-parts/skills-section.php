@@ -16,8 +16,10 @@
               </p>
             </div>
             <div class="skills-section">
+
               <?php $skills = get_theme_mod('skill_repeater');
                foreach ($skills as $skill):?>
+
               <!-- Progress Bar Start -->
               <div class="progress-box">
                 <h5><?php echo $skill['skill_item_title']; ?><span class="ml-1 pull-right"><?php echo $skill['skill_numbers']; ?>%</span></h5>
@@ -25,6 +27,7 @@
                   <div class="progress-bar" role="progressbar" data-width="<?php echo $skill['skill_numbers']; ?>" style="width: <?php echo $skill['skill_numbers']; ?>%;"></div>
                 </div>
               </div>
+              
             <?php endforeach; ?>
             
               <!-- End Progressbar -->

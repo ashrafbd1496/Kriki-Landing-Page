@@ -887,3 +887,76 @@ Kirki::add_field( 'ashraf_kriki_config', [
 		'limit' => 3
 	],
 ] );
+
+// Work Section
+Kirki::add_section( 'work_section', array(
+    'title'          => esc_html__( 'Work Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//  Work Show / Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'switch',
+	'settings' => 'work_show',
+	'label'    => esc_html__( 'Work Show?', 'ashraf_kirki' ),
+	'section'  => 'work_section',
+	'default'  => 'show',
+	'choices'     => [
+		'show'  => esc_html__( 'Show', 'ashraf_kirki' ),
+		'hide' => esc_html__( 'Hide', 'ashraf_kirki' ),
+	],
+] );
+
+//  Work Title
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'work_title',
+	'label'    => esc_html__( 'Work Title', 'stack' ),
+	'section'  => 'work_section',
+	'default'  => __('Our Work', 'ashraf_kirki')
+] );
+
+//  Work Description
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'textarea',
+	'settings' => 'work_desc',
+	'label'    => esc_html__( 'Work Description', 'ashraf_kirki' ),
+	'section'  => 'work_section',
+	'default'  => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus architecto laudantium dolorem, ', 'ashraf_kirki')
+] );
+
+// Work Items
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Work Items', 'ashraf_kirki' ),
+	'section'     => 'work_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'work_item_title',
+	],
+	'button_label' => esc_html__('Add New Work Item', 'ashraf_kirki' ),
+	'settings'     => 'work_repeater',
+	'fields' => [
+        'work_item_title' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Work Title', 'ashraf_kirki' ),
+			'default'     => __('Creative Design', 'stack'),
+		],
+		'work_item_small_image' => [
+			'type'        => 'image',
+			'label'       => esc_html__( 'Work Small Image', 'ashraf_kirki' ),
+			'default'     => '100',
+		],
+		'work_item_big_image' => [
+			'type'        => 'image',
+			'label'       => esc_html__( 'Work Big Image', 'ashraf_kirki' ),
+			'default'     => '100',
+		],
+	],
+    'choices' => [
+		'limit' => 6
+	],
+] );
