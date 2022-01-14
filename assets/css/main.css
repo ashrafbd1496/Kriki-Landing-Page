@@ -1510,7 +1510,7 @@ hr {
 .testimonial {
   background: #34363a;
   position: relative;
-  background: url(../img/testimonial.jpg);
+  /*background: url(../img/testimonial.jpg);*/
 }
 
 .testimonial .section-title {

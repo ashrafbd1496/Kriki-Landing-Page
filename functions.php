@@ -110,7 +110,7 @@ function ashraf_kriki_assets()
 
     wp_enqueue_script('jquery-easing-js', get_theme_file_uri('assets/js/jquery.easing.min.js', array('jquery'),'VERSION', true));
 
-    wp_enqueue_script('counterup-js', get_theme_file_uri('assets/js/jquery.counterup.min', array('jquery'),'VERSION', true));
+    wp_enqueue_script('counterup-js', get_theme_file_uri('assets/js/jquery.counterup.min.js', array('jquery'),'VERSION', true));
 
     wp_enqueue_script('nivo-lightbox-js', get_theme_file_uri('assets/js/nivo-lightbox.js', array('jquery'),'VERSION', true));
 

@@ -1,3 +1,4 @@
+<?php if (get_theme_mod('blog_section_show',true)==true): ?>
 
     <!-- Blog Section starts-->
     <section id="blog" class="section-padding">
@@ -8,6 +9,24 @@
           <p>A desire to help and empower others between community contributors in technology <br> began to grow in 2020.</p>
         </div>
         <div class="row">
+           <?php
+      $args = array(
+         'post_type' => 'post',
+         'posts_per_page' => 3,
+         'order' => 'DESC'
+      );
+      $query = new WP_Query($args);
+         while($query -> have_posts()){
+            $query ->the_post();
+            ?>
+
+
+            <?php
+                     }
+
+               ?>
+
+
           <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 blog-item">
             <!-- Blog Item Starts -->
             <div class="blog-item-wrapper wow fadeInLeft" data-wow-delay="0.3s">
@@ -70,7 +89,10 @@
             </div>
             <!-- Blog Item Wrapper Ends-->
           </div>
+
+
         </div>
       </div>
     </section>
     <!-- blog Section End -->
+  <?php endif; ?>

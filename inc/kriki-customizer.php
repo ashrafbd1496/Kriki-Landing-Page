@@ -960,3 +960,293 @@ Kirki::add_field( 'ashraf_kriki_config', [
 		'limit' => 6
 	],
 ] );
+
+
+
+//Blog section
+
+Kirki::add_section( 'blog_section', array(
+    'title'          => esc_html__( 'Blog Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Blog Sedtion Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'blog_section_show',
+	'label'       => esc_html__( 'Show Blog Section', 'kirki' ),
+	'section'     => 'blog_section',
+	'default'     => true,
+] );
+
+//Blog Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'blog_section_title',
+	'label'    => esc_html__( 'Price Blog Title', 'ashraf_kirki' ),
+	'section'  => 'blog_section',
+	'default'  => esc_html__( 'Best Pricing', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#blog .section-header h2',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+//Blog description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'blog_section_description',
+	'label'    => esc_html__( 'Blog Section Description', 'ashraf_kirki' ),
+	'section'  => 'blog_section',
+	'default'  => esc_html__( 'A desire to help and empower others between community contributors in technology
+began to grow in 2020.', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#blog .section-header p',
+			'function'=>'html',
+
+		)
+	),
+] );
+
+//Testimonial section
+
+Kirki::add_section( 'testimonial_section', array(
+    'title'          => esc_html__( 'Testimonial Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Testimonial Sedtion Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'testimonial_section_show',
+	'label'       => esc_html__( 'Show Testimonial Section', 'kirki' ),
+	'section'     => 'testimonial_section',
+	'default'     => true,
+] );
+
+//Testimonial Section Backgroud Image
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'background',
+	'settings' => 'testimonial_section_bg',
+	'label'    => esc_html__( 'Testimonial Section Background', 'ashraf_kirki' ),
+	'section'  => 'testimonial_section',
+	'transport'=>'auto',
+	'output'=>array(
+		array(
+			
+			'element'=>'.testimonial',
+
+		)
+	),
+	
+	
+] );
+
+//Testimonial Repeater Section
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Team Items', 'ashraf_kirki' ),
+	'section'     => 'testimonial_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'testimonial_item_title',
+	],
+	'button_label' => esc_html__('Add New Testimonial Item', 'ashraf_kirki' ),
+	'settings'     => 'testimonial_repeater',
+	'default'      =>'',
+	'fields' => [
+        'testimonial_item_image' => [
+			'type'        => 'image',
+			'label'       => esc_html__( 'Testimonial Item Image', 'ashraf_kirki' ),
+			'default'     => 'https://via.placeholder.com/480',
+           
+		],
+		'info_name' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Testimonial Info Name', 'ashraf_kirki' ),
+			'default'     => 'Jon Doe',
+           
+		],
+		'info_desig' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Testimonial Info Designation', 'ashraf_kirki' ),
+			'default'     => 'Boston Brothers co.com',
+           
+		],
+		'testimonial_item_description' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Testimonial Item Description', 'ashraf_kirki' ),
+			'default'     => 'Holisticly empower leveraged ROI whereas effective web-readiness. Completely enable emerging meta-services with cross-platform web services. Quickly initiate inexpensive total linkage rather than extensible scenarios. Holisticly empower leveraged ROI whereas effective web-readiness.',
+		],
+	],
+    'choices' => [
+		'limit' => 5
+	],
+] );
+
+
+//Clients section
+
+Kirki::add_section( 'clients_section', array(
+    'title'          => esc_html__( 'Clients Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Testimonial Sedtion Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'clients_section_show',
+	'label'       => esc_html__( 'Show Clients Section', 'kirki' ),
+	'section'     => 'clients_section',
+	'default'     => true,
+] );
+
+//Clients Section Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'clients_section_title',
+	'label'    => esc_html__( 'Clients Section Title', 'ashraf_kirki' ),
+	'section'  => 'clients_section',
+	'default'  => esc_html__( 'NOTABLE CLIENTS', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#clients .section-header h2',
+			'function'=>'html',
+
+		)
+	),
+	
+	
+] );
+
+//Clients Section Description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'clients_section_desc',
+	'label'    => esc_html__( 'Clients Section Description', 'ashraf_kirki' ),
+	'section'  => 'clients_section',
+	'default'  => esc_html__( 'Over the last 20 years, we have helped and guided organisations to achieve outstanding results', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'#clients .section-header p',
+			'function'=>'html',
+
+		)
+	),
+	
+	
+] );
+
+
+// Clietns Items
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Clients Items', 'ashraf_kirki' ),
+	'section'     => 'clients_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'clients_item_title',
+	],
+	'button_label' => esc_html__('Add New Work Item', 'ashraf_kirki' ),
+	'settings'     => 'clients_repeater',
+	'fields' => [
+        'clients_item_title' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Work Title', 'ashraf_kirki' ),
+			'default'     => __('Company Name', 'stack'),
+		],
+		'clients_item_image' => [
+			'type'        => 'image',
+			'label'       => esc_html__( 'Work Item Image', 'ashraf_kirki' ),
+			'default'     => 'https://via.placeholder.com/480',
+		],
+		
+	],
+   'choices' => [
+		'limit' => 4
+	],
+] );
+
+
+//Contact section
+
+Kirki::add_section( 'contact_section', array(
+    'title'          => esc_html__( 'Contact Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Contact Sedtion Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'contact_section_show',
+	'label'       => esc_html__( 'Show Contact Section', 'kirki' ),
+	'section'     => 'contact_section',
+	'default'     => true,
+] );
+
+//Contact Section Title
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'contact_section_title',
+	'label'    => esc_html__( 'Contact Section Title', 'ashraf_kirki' ),
+	'section'  => 'contact_section',
+	'default'  => esc_html__( 'NOTABLE CLIENTS', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.contact-right-area .contact-title h2',
+			'function'=>'html',
+
+		)
+	),
+	
+	
+] );
+
+//Contact Section Description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'clients_section_desc',
+	'label'    => esc_html__( 'Contact Section Description', 'ashraf_kirki' ),
+	'section'  => 'clients_section',
+	'default'  => esc_html__( 'Over the last 20 years, we have helped and guided organisations to achieve outstanding results', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.contact-right-area .contact-title p',
+			'function'=>'html',
+
+		)
+	),
+	
+	
+] );
