@@ -1216,12 +1216,32 @@ Kirki::add_field( 'ashraf_kriki_config', [
 	'settings' => 'contact_section_title',
 	'label'    => esc_html__( 'Contact Section Title', 'ashraf_kirki' ),
 	'section'  => 'contact_section',
-	'default'  => esc_html__( 'NOTABLE CLIENTS', 'ashraf_kirki' ),
+	'default'  => esc_html__( 'We are a friendly bunch.', 'ashraf_kirki' ),
 	'priority' => 10,
 	'transport'=>'postMessage',
 	'js_vars'=>array(
 		array(
-			'element'=>'.contact-right-area .contact-title h2',
+			'element'=>'.contact-title h1',
+			'function'=>'html',
+
+		)
+	),	
+	
+] );
+
+//Contact Section Description
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'text',
+	'settings' => 'contact_section_desc',
+	'label'    => esc_html__( 'Contact Section Description', 'ashraf_kirki' ),
+	'section'  => 'contact_section',
+	'default'  => esc_html__( 'We create projects for companies and startups with a passion for quality', 'ashraf_kirki' ),
+	'priority' => 10,
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.contact-title p',
 			'function'=>'html',
 
 		)
@@ -1230,23 +1250,137 @@ Kirki::add_field( 'ashraf_kriki_config', [
 	
 ] );
 
-//Contact Section Description
+//Contact Section Sub title
 
 Kirki::add_field( 'ashraf_kriki_config', [
 	'type'     => 'text',
-	'settings' => 'clients_section_desc',
-	'label'    => esc_html__( 'Contact Section Description', 'ashraf_kirki' ),
-	'section'  => 'clients_section',
-	'default'  => esc_html__( 'Over the last 20 years, we have helped and guided organisations to achieve outstanding results', 'ashraf_kirki' ),
+	'settings' => 'contact_section_subtitle',
+	'label'    => esc_html__( 'Contact Section Sub Title', 'ashraf_kirki' ),
+	'section'  => 'contact_section',
+	'default'  => esc_html__( 'CONTACT US.', 'ashraf_kirki' ),
 	'priority' => 10,
 	'transport'=>'postMessage',
 	'js_vars'=>array(
 		array(
-			'element'=>'.contact-right-area .contact-title p',
+			'element'=>'.contact-title h2',
 			'function'=>'html',
 
 		)
-	),
+	),	
+	
+] );
+
+// Contact Repeater Items
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'repeater',
+	'label'       => esc_html__( 'Clients Items', 'ashraf_kirki' ),
+	'section'     => 'contact_section',
+	'priority'    => 10,
+	'row_label' => [
+		'type'  => 'field',
+		'value' => esc_html__( 'Add New Item', 'ashraf_kirki' ),
+		'field' => 'contact_item_title',
+	],
+	'button_label' => esc_html__('Add New Contact Item', 'ashraf_kirki' ),
+	'settings'     => 'contact_repeater',
+	'fields' => [
+        'contact_item_title' => [
+			'type'        => 'text',
+			'label'       => esc_html__( 'Contact Item Title', 'ashraf_kirki' ),
+			'default'     => __('ADDRESS: ', 'stack'),
+		],
+		'contact_item_icon' => [
+			'type'        => 'select',
+			'label'       => esc_html__( 'Work Item Icon', 'ashraf_kirki' ),
+			'default'     => 'lni-map-marker',
+			'choices'     => array(
+				'lni-map-marker'	=>__('Address','ashraf_kirki'),
+				'lni-envelope'	=>__('Email','ashraf_kirki'),
+				'lni-phone-handset'	=>__('Phone','ashraf_kirki'),
+			),
+		],
+		
+	],
+   'choices' => [
+		'limit' => 3
+	],
+] );
+
+
+//Footer section
+
+Kirki::add_section( 'footer_section', array(
+    'title'          => esc_html__( 'Footer Section', 'ashraf_kirki' ),
+    'panel'          => 'ashraf_kriki_panel',
+    'priority'       => 160,
+) );
+
+//Footer Sedtion Show Hide
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'        => 'switch',
+	'settings'    => 'footer_section_show',
+	'label'       => esc_html__( 'Show Footer Section', 'kirki' ),
+	'section'     => 'footer_section',
+	'default'     => true,
+] );
+
+//Footer Logo
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'image',
+	'settings' => 'footer_logo',
+	'label'    => esc_html__( 'Footer Logo', 'ashraf_kirki' ),
+	'section'  => 'footer_section',
+	
+	
+] );
+
+//Footer Social Links
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'link',
+	'settings' => 'footer_social_facebook',
+	'label'    => esc_html__( 'Footer Social Facebook', 'ashraf_kirki' ),
+	'section'  => 'footer_section',
+	'default'	=>'https://facebook.com'
+	
+] );
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'link',
+	'settings' => 'footer_social_twitter',
+	'label'    => esc_html__( 'Footer Social Twitter', 'ashraf_kirki' ),
+	'section'  => 'footer_section',
+	'default'	=>'https://twitter.com'
+	
+] );
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'link',
+	'settings' => 'footer_social_instagram',
+	'label'    => esc_html__( 'Footer Social Instagram', 'ashraf_kirki' ),
+	'section'  => 'footer_section',
+	'default'	=>'https://instagram.com'
+	
+] );
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'link',
+	'settings' => 'footer_social_linkedin',
+	'label'    => esc_html__( 'Footer Social Linkedin', 'ashraf_kirki' ),
+	'section'  => 'footer_section',
+	'default'	=>'https://linkedin.com'
+	
+] );
+
+
+
+//Footer Credit
+
+Kirki::add_field( 'ashraf_kriki_config', [
+	'type'     => 'editor',
+	'settings' => 'footer_credit',
+	'label'    => esc_html__( 'Footer credit', 'ashraf_kirki' ),
+	'section'  => 'footer_section',
 	
 	
 ] );

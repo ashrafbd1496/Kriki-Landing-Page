@@ -4,19 +4,37 @@ s<!-- Copyright Section Start -->
         <div class="row">
           <div class="col-lg-4 col-md-3 col-xs-12">
             <div class="footer-logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
+              <img src="<?php echo get_theme_mod('footer_logo');?>" alt="">
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-xs-12">     
             <div class="social-icon text-center">
-              <a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>
-              <a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>
-              <a class="instagram" href="#"><i class="lni-instagram-filled"></i></a>
-              <a class="linkedin" href="#"><i class="lni-linkedin-filled"></i></a>
+
+              <?php if (get_theme_mod('footer_social_facebook')) :?>
+      
+              <a class="facebook" href="<?php echo get_theme_mod('footer_social_facebook'); ?>"><i class="lni-facebook-filled"></i></a>
+                 <?php endif; ?>
+
+                 <?php if (get_theme_mod('footer_social_twitter')) :?>
+
+              <a class="twitter" href="<?php echo get_theme_mod('footer_social_twitter'); ?>"><i class="lni-twitter-filled"></i></a>
+               <?php endif; ?>
+
+
+              <?php if (get_theme_mod('footer_social_instagram')) :?>
+              <a class="instagram" href="<?php echo get_theme_mod('footer_social_instagram'); ?>"><i class="lni-instagram-filled"></i></a>
+               <?php endif; ?>
+
+
+              <?php if (get_theme_mod('footer_social_linkedin')) :?>
+              <a class="linkedin" href="<?php echo get_theme_mod('footer_social_linkedin'); ?>"><i class="lni-linkedin-filled"></i></a>
+               <?php endif; ?>
+
+         
             </div>
           </div>
           <div class="col-lg-4 col-md-5 col-xs-12">
-            <p class="float-right">Developed by <a href="http://ashrafbd.com" rel="nofollow">Ashraf</a></p>
+            <?php echo get_theme_mod('footer_credit'); ?>
           </div> 
         </div>
       </div>
