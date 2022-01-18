@@ -145,6 +145,19 @@
         return false;
       });
 
+
+      //Add and Remove class into menu Item
+      
+    $( "#main-menu1 li" ).addClass( "nav-item" );
+    $( "#main-menu1 li a" ).addClass( "nav-link" );
+
+    //add active class when clicked on li
+    $("#main-menu1 li").on("click", function(){
+    
+        $(this).addClass("active"); 
+        $(this).siblings().removeClass("active");
+     });
+
   });      
 
 }(jQuery));

@@ -13,7 +13,8 @@ if (site_url() == 'http://localhost/kriki') {
 function kriki_setup(){
 	load_theme_textdomain('ashraf_kiri',get_theme_file_path('/languages'));
 
-	add_theme_support('post_thumbnails');
+	add_theme_support( 'post-thumbnails');
+    set_post_thumbnail_size( 350, 230 );
 	add_theme_support('custom-logo');
 	add_theme_support('title-tag');
 	add_theme_support('automatic-feed-links');
