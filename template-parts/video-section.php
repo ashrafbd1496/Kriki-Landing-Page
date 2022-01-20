@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-md-12 col-sm-12">
             <div class="video-promo-content text-center wow fadeInUp" data-wow-delay="0.3s">
-              <a href="<?php echo get_theme_mod('video_link') ;?>" class="video-popup"><i class="<?php echo get_theme_mod('video_icon'); ?>"></i></a>
-              <h2 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"><?php echo get_theme_mod('video_title'); ?></h2>
+              <a href="<?php echo esc_url(get_theme_mod('video_link')) ;?>" class="video-popup"><i class="<?php echo esc_attr(get_theme_mod('video_icon')); ?>"></i></a>
+              <h2 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"><?php echo esc_html(get_theme_mod('video_title')); ?></h2>
             </div>
           </div>
         </div>

@@ -26,7 +26,11 @@
 
               <?php
               $settings = get_theme_mod('about_repeater');
-              foreach($settings as $item) {
+              if (is_array($settings) || is_object($settings))
+                {
+                         
+                  foreach($settings as $item) {
+
             ?>
 
               <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -40,7 +44,7 @@
               </div>
             
                   <?php
-                }
+                }}
                ?>
 
               </div>

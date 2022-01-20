@@ -1,1 +1,1 @@
-# Kriki-Landing-Page
+# Kriki Landing Page
