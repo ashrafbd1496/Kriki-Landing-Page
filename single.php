@@ -11,7 +11,7 @@ get_header('blog');
           <div class="col-md-12">
             <div class="breadcrumb-wrapper text-center">
               <h2>Single Blog</h2>
-              <p><a href="<?php echo site_url(); ?>">Home </a>/ <?php the_title(); ?></p>
+              <p><a href="<?php echo esc_url(home_url()); ?>">Home </a>/ <?php the_title(); ?></p>
             </div>
           </div>
         </div> 
@@ -26,11 +26,11 @@ get_header('blog');
           <div class="col-lg-8 col-md-12 col-xs-12">
             <div class="blog-post">
               <div class="post-thumb">
-                <img src="<?php echo the_post_thumbnail_url();?>" alt="">
+                <img src="<?php echo esc_url(the_post_thumbnail_url());?>" alt="">
               </div>
               <div class="post-content">
-                <h3><?php echo the_title(); ?></h3>
-                <?php echo the_content(); ?>        
+                <h3><?php echo esc_html(the_title()); ?></h3>
+                <?php echo esc_html(the_content()); ?>        
               </div>
             </div>
             <div class="blog-comment">
@@ -39,7 +39,7 @@ get_header('blog');
                   <li class="comment">
                     <div class="the-comment">
                       <div class="avatar">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/avater-1.jpg" alt="">
+                        <img src="<?php echo esc_attr(get_template_directory_uri());?>/assets/img/blog/avater-1.jpg" alt="">
                       </div>
                       <div class="comment-box">
                         <div class="comment-author">
@@ -55,7 +55,7 @@ get_header('blog');
                       <li class="comment">
                         <div class="the-comment">
                           <div class="avatar">
-                            <img src="<?php echo get_template_directory_uri();?>/assets/img/blog/avater-2.jpg" alt="">
+                            <img src="<?php echo esc_attr(get_template_directory_uri());?>/assets/img/blog/avater-2.jpg" alt="">
                           </div>
                           <div class="comment-box">
                             <div class="comment-author">

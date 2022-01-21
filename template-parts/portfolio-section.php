@@ -6,8 +6,8 @@
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo get_theme_mod('work_title');?></h2>
-          <p><?php echo get_theme_mod('work_desc');?></p>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('work_title'));?></h2>
+          <p><?php echo esc_html(get_theme_mod('work_desc'));?></p>
         </div>
 
       

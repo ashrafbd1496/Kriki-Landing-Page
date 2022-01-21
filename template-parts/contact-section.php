@@ -15,10 +15,10 @@
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="contact-right-area wow fadeIn">
               <div class="contact-title">
-                <h1><?php echo get_theme_mod('contact_section_title'); ?></h1>
-                <p><?php echo get_theme_mod('contact_section_desc'); ?></p>
+                <h1><?php echo esc_html(get_theme_mod('contact_section_title')); ?></h1>
+                <p><?php echo esc_html(get_theme_mod('contact_section_desc')); ?></p>
               </div>
-              <h2><?php echo get_theme_mod('contact_section_subtitle'); ?></h2>
+              <h2><?php echo esc_html(get_theme_mod('contact_section_subtitle')); ?></h2>
               <div class="contact-right">
                 <?php $contacts = get_theme_mod('contact_repeater') ;
                   foreach($contacts as $contact):?>

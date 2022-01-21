@@ -6,8 +6,8 @@
     <section id="services" class="section-padding bg-gray">
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo get_theme_mod('service_title') ;?></h2>
-          <p><?php echo get_theme_mod('service_description') ;?></p>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('service_title')) ;?></h2>
+          <p><?php echo esc_html(get_theme_mod('service_description')) ;?></p>
         </div>
         <div class="row">
 
@@ -17,7 +17,7 @@
             $services = get_theme_mod('service_repeater');
             foreach($services as $service){
               ?>
-                <div class="col-md-6 <?php echo get_theme_mod('service_item_column') ;?> col-xs-12">
+                <div class="col-md-6 <?php echo esc_html(get_theme_mod('service_item_column'));?> col-xs-12">
                   <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
                     <div class="icon">
                       <i class="<?php echo $service['service_item_icon']; ?>"></i>

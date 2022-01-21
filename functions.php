@@ -3,14 +3,14 @@
 require_once(get_theme_file_path('/inc/tgm.php'));
 require_once(get_theme_file_path('/inc/kriki-customizer.php'));
 
-if (site_url() == 'http://localhost/kriki') {
+if (home_url() == 'http://localhost/kirki') {
 
     define('VERSION', time());
 } else {
     define('VERSION', wp_get_theme()->get('VERSION'));
 }
 
-function kriki_setup(){
+function kirki_setup(){
 	load_theme_textdomain('kirki',get_theme_file_path('/languages'));
 
 	add_theme_support( 'post-thumbnails');
@@ -60,13 +60,13 @@ function kriki_setup(){
 
 }
 
-add_action('after_setup_theme','kriki_setup');
+add_action('after_setup_theme','kirki_setup');
 
 
-function ashraf_kriki_assets()
+function ashraf_kirki_assets()
 {
     //stylesheets
-    wp_enqueue_style('fontawesome-css', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+    wp_enqueue_style('fontawesome-css', get_theme_file_uri('assets/css/font-awesome-all.min.css'),null,time());
 
     wp_enqueue_style('fotns-css', '//fonts.googleapis.com/css?family=Open+Sans|Titillium+Web:600,700', false);
 
@@ -128,7 +128,7 @@ function ashraf_kriki_assets()
     }
    
 }
-add_action('wp_enqueue_scripts', 'ashraf_kriki_assets');
+add_action('wp_enqueue_scripts', 'ashraf_kirki_assets');
 
 
 /**
@@ -152,99 +152,5 @@ function kirki_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'kirki_widgets_init' );
-
-
-
-/**
- * Recent Post  widget 
- *  */ 
-class kirki_latest_post_widget extends WP_Widget {
-  
-    function __construct() {
-    parent::__construct(
-      
-    // Base ID of your widget
-    'latest_post_widget', 
-      
-    // Widget name will appear in UI
-    __('Latest Post Widget', 'kirki'), 
-      
-    // Widget description
-    array( 'description' => __( 'Latest Post Widget', 'kirki' ), ) 
-    );
-    }
-      
-    // Creating widget front-end
-      
-    public function widget( $args, $instance ) {
-    $title = apply_filters( 'widget_title', $instance['title'] );
-      
-    // before and after widget arguments are defined by themes
-    echo $args['before_widget'];
-    if ( ! empty( $title ) )
-    echo $args['before_title'] . $title . $args['after_title'];
-        $post = array(
-            'post_type' =>'post',
-            'posts_per_page'    => 3,
-        );
-        $kirki_query = New WP_Query($post);
-        while($kirki_query->have_posts()){
-            $kirki_query->the_post();
-            ?>
-            <div class="block-21 mb-4 d-flex">
-            <a class="blog-img mr-4" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></a>
-                <div class="text">
-                    <h3 class="heading"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-                    <div class="meta">
-                        <div><a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'));  ?>" class="entry-date"><?php the_time('F j, Y') ?></a></div>
-                        <div><a><?php acf_ashraf_posted_by();?></a></div>
-
-                    </div>
-                </div>
-            </div>
-            <?php
-        }
-      ?>
-         
-      <?php
-    
-    echo $args['after_widget'];
-    }
-              
-    // Widget Backend 
-    public function form( $instance ) {
-    if ( isset( $instance[ 'title' ] ) ) {
-    $title = $instance[ 'title' ];
-    }
-    else {
-    $title = __( 'Latest Post', 'kirki' );
-    }
-    // Widget admin form
-    ?>
-    <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e( 'Title:' ); ?></label> 
-    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-    </p>
-    <?php 
-    }
-          
-    // Updating widget replacing old instances with new
-    public function update( $new_instance, $old_instance ) {
-    $instance = array();
-    $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-    return $instance;
-    }
-     
-    // Class cat_widget ends here
-    } 
-     
-     
-    // Register and load the widget
-    function kirki_latest_post_widget() {
-        register_widget('kirki_latest_post_widget');
-    }
-    add_action( 'widgets_init', 'kirki_latest_post_widget' );
-
-
 
 

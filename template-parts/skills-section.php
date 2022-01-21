@@ -6,13 +6,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
-            <img class="img-fluid" src="<?php echo get_theme_mod('skill_image_setting');?>" alt="" >
+            <img class="img-fluid" src="<?php echo esc_attr(get_theme_mod('skill_image_setting') );?>" alt="" >
           </div>
           <div class="col-lg-6 col-md-12 col-xs-12 info wow fadeInRight" data-wow-delay="0.3s">
             <div class="site-heading">
-              <h2 class="section-title"><?php echo get_theme_mod('skill_title_setting');?></h2>
+              <h2 class="section-title"><?php echo esc_html(get_theme_mod('skill_title_setting'));?></h2>
               <p>
-               <?php echo get_theme_mod('skill_description_setting');?>
+               <?php echo esc_attr(get_theme_mod('skill_description_setting'));?>
               </p>
             </div>
             <div class="skills-section">

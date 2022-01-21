@@ -4,8 +4,8 @@
     <section id="pricing" class="section-padding bg-gray">
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo get_theme_mod('price_section_title') ?></h2>
-          <p><?php echo get_theme_mod('price_section_description') ?></p>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('price_section_title')); ?></h2>
+          <p><?php echo esc_html(get_theme_mod('price_section_description')); ?></p>
         </div>
         <div class="row">
           <?php 

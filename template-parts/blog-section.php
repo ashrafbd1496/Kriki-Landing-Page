@@ -5,8 +5,8 @@
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo get_theme_mod('blog_section_title'); ?></h2>
-          <p><?php echo get_theme_mod('blog_section_description'); ?></p>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('blog_section_title')); ?></h2>
+          <p><?php echo esc_html(get_theme_mod('blog_section_description')); ?></p>
         </div>
         <div class="row">
 
@@ -21,6 +21,7 @@
          while($query -> have_posts()){
             $query ->the_post();
             ?>
+
              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 blog-item">
             <!-- Blog Item Starts -->
             <div class="blog-item-wrapper wow fadeInLeft" data-wow-delay="0.3s">
@@ -34,7 +35,7 @@
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
                 <?php the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>" class="btn btn-common btn-rm"><?php echo esc_html('Read More','ashraf_kiri'); ?></a>
+                <a href="<?php the_permalink(); ?>" class="btn btn-common btn-rm"><?php echo esc_html('Read More','kirki'); ?></a>
               </div>
             </div>
             <!-- Blog Item Wrapper Ends-->

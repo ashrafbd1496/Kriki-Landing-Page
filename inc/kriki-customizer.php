@@ -1396,6 +1396,15 @@ Kirki::add_field( 'kirki_config', [
 	'settings' => 'footer_credit',
 	'label'    => esc_html__( 'Footer credit', 'kirki' ),
 	'section'  => 'footer_section',
+	'default'  => '',
+	'transport'=>'postMessage',
+	'js_vars'=>array(
+		array(
+			'element'=>'.copyright p',
+			'function'=>'html',
+
+		)
+	),	
 	
 	
 ] );

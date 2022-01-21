@@ -8,15 +8,15 @@
 
                 <h2 class="title-hl wow fadeInLeft" data-wow-delay="0.3s">
 
-                  <?php echo get_theme_mod('about_title_setting') ;?>
+                  <?php echo esc_html(get_theme_mod('about_title_setting')) ;?>
                 </h2>
 
                 <p class="mb-4">
-                  <?php echo get_theme_mod('about_description_setting') ;?>
+                  <?php echo esc_html(get_theme_mod('about_description_setting')) ;?>
                     
                   </p>
 
-                <a href="<?php echo get_theme_mod('about_button_link') ;?>" class="btn btn-common"><?php echo get_theme_mod('about_button_text') ;?></a>
+                <a href="<?php echo esc_url(get_theme_mod('about_button_link')) ;?>" class="btn btn-common"><?php echo esc_html(get_theme_mod('about_button_text')) ;?></a>
 
               </div>
             </div>
