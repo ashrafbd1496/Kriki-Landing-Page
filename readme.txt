@@ -63,4 +63,4 @@ This theme bundles the following third-party resources:
 Kirki Customizer
 
 Images
-Copyright free image from -https://unsplash.com
+Copyright free image from -unsplash
